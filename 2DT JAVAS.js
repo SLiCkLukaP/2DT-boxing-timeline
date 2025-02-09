@@ -1,7 +1,11 @@
-// script.js
-document.querySelectorAll('.event').forEach(event => {
-    event.addEventListener('click', () => {
-      alert(`Event: ${event.dataset.event}\nYear: ${event.dataset.year}`);
+document.addEventListener("DOMContentLoaded", () => {
+    const events = document.querySelectorAll(".timeline-event");
+    
+    events.forEach(event => {
+        event.addEventListener("click", () => {
+            const details = event.querySelector(".event-details");
+            // Toggle visibility of the event details
+            details.classList.toggle("show-details");
+        });
     });
-  });
-  
+});
